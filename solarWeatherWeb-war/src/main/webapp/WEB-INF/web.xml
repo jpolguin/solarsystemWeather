@@ -4,8 +4,28 @@
         <servlet-name>solarweather</servlet-name>
         <servlet-class>com.olguin.solarsystem.web.SolarWeatherServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>solarweathermemory</servlet-name>
+        <servlet-class>com.olguin.solarsystem.web.SolarWeatherInMemoryServlet</servlet-class>
+    </servlet>    
+    <servlet>
+   <servlet-name>weather-init-servlet</servlet-name>
+   <servlet-class>com.olguin.solarsystem.web.WeatherForecastInitServlet</servlet-class>
+   <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+     <servlet-mapping>
+        <servlet-name>weather-init-servlet</servlet-name>
+        <url-pattern>/generar_pronostico</url-pattern>
+    </servlet-mapping>
+    
     <servlet-mapping>
         <servlet-name>solarweather</servlet-name>
+        <url-pattern>/clima2</url-pattern>
+    </servlet-mapping>
+    
+      <servlet-mapping>
+        <servlet-name>solarweathermemory</servlet-name>
         <url-pattern>/clima</url-pattern>
     </servlet-mapping>
 </web-app>
